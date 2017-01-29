@@ -11,6 +11,8 @@ class App extends Component {
         <link href="https://fonts.googleapis.com/css?family=Lato|Playfair+Display" rel="stylesheet" />
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+         <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
         <nav>
           <Navigation />
         </nav>
@@ -21,5 +23,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;

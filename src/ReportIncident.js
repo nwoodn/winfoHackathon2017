@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import './ReportIncident.css';
 import { Form, FormControl, FormGroup, ControlLabel, Checkbox, Col, Button } from 'react-bootstrap';
 
 var SAMPLE_EVENTS = [
@@ -18,7 +19,7 @@ class ReportIncident extends React.Component {
 			<div className="Events">
 
 				<div className="Event-header">
-					<h2 className="block-font">Report Incident</h2>
+					<h2 className="block-font"></h2>
 					<AddForm />
 				</div>
 
@@ -93,7 +94,7 @@ class Description extends React.Component {
 					<InputBox type="Time"/>
 
 					<FormGroup>
-						<Col smOffset={2} sm={10}>
+						<Col>
 							<Button type="submit">
 								Submit
 					</Button>

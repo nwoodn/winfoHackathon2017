@@ -1,16 +1,25 @@
 .navbar {
     font-size: 120%;
-    margin-bottom: 0px;
+    margin-bottom: 40px;
     border-radius: 0;
+    background-color: #f6f6f6;
+    text-align: center;
 }
+
+
 
 .kanyeImg {
     height: 80px;
 }
 
+.button {
+    display: inline;
+    text-align: center;
+}
+
 #container {
-    text-align: left;
-    text-align: justify;
+    display: inline;
+    text-align: center;
 }
 
 h1, h2 {

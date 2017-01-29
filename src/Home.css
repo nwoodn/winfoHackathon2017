@@ -1,0 +1,64 @@
+body {
+	background-color: #93b0bf;
+    font-family: Impact, Charcoal, sans-serif;
+    color: #47525E;
+    margin-bottom: 50px;
+
+}
+
+textarea {
+    height: 30px;
+}
+
+mapImg {
+    width: 70%;
+    float: left;
+
+}
+
+#mapBox {
+    clear: left;
+    float: left;
+	padding: 10px;
+    height: 400px;
+    width: 50%;
+    margin: auto;
+    background-color: #f6f6f6;
+}
+
+#wrap {
+    text-align: left;
+    width: 80%;
+    height: 550px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f6f6f6;
+    overflow: hidden;
+    border-radius: 25px;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+#events {
+    padding-top: 20px;
+    float: left;
+    height: 400px;
+    width: 50%;
+    padding-left: 40px;
+    margin:auto;
+    background-color: #f6f6f6;
+}
+
+.event {
+    padding-top: 20px;
+}
+
+.icon {
+    height: 50px;
+    width: 50px;
+    float: left;
+}
+
+h2 {
+    padding-bottom: 50px;
+    color: #47525E;
+}
