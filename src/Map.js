@@ -55,31 +55,32 @@ class MyMap extends Component {
 
 			// car
 			var carIcon = L.icon({
-				iconUrl: 'wreck.png',
+				iconUrl: './wreck.png',
 				iconSize: [21, 32], // size of the icon
 				popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
 			});
 			// fire
 			var fireIcon = L.icon({
-				iconUrl: 'fire.png',
+				iconUrl: './fire.png',
 				iconSize: [21, 32], 
 				popupAnchor: [-4, -80]
 			});
 			// lock
 			var lockIcon = L.icon({
-				iconUrl: 'robber.png',
+				iconUrl: './robber.png',
 				iconSize: [21, 32], 
 				popupAnchor: [-4, -80]
 			});
 			// harzard
 			var harzardIcon = L.icon({
-				iconUrl: 'harazard.png',
+			iconUrl: './harazard.png',
+ 
 				iconSize: [21, 32], 
 				popupAnchor: [-4, -80]
 			});
 			// gun
 			var gunIcon = L.icon({
-				iconUrl: 'gun.png',
+				iconUrl: './public/gun.png',
 				iconSize: [21, 32], 
 				popupAnchor: [-4, -80]
 			});
@@ -97,7 +98,7 @@ class MyMap extends Component {
 
 			var markerArray = this.props.marker;
 			markerArray.forEach(function (marker){
-				L.marker(marker.location[0], marker.location[1], {icon: fireIcon}).addTo(map).bindPopup("Car crash: Jan 28, 2017");
+				L.marker(marker.location[0], marker.location[1], {icon: gunIcon}).addTo(map).bindPopup("Car crash: Jan 28, 2017");
 			});
 			
 

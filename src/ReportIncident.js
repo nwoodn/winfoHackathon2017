@@ -7,6 +7,7 @@ var SAMPLE_EVENTS = [
 	{ city: 'San Fransisco', state: 'California', country: 'USA', venue: 'super cool theater', date: '11-20-2017' }, { city: 'Seattle', state: 'Washington', country: 'USA', venue: 'Safeco', date: '11-25-2017' }, { city: 'Chicago', state: 'Illinois', country: 'USA', venue: 'dome', date: '12-04-2017' }, { city: 'San Diego', state: 'California', country: 'USA', venue: 'super cool theater', date: '11-26-2017' }
 ]
 
+var EVENTS = [];
 
 class ReportIncident extends React.Component {
 	constructor(props) {
@@ -33,18 +34,8 @@ class AddForm extends React.Component {
 		super(props);
 		this.state = { value: '' };
 
-		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	handleChange(event) {
-		this.setState({ value: event.target.value });
-	}
-
-	handleSubmit(event) {
-		alert('A name was submitted: ' + this.state.value);
-		event.preventDefault();
-	}
 
 	render() {
 		return (
@@ -60,10 +51,10 @@ class Description extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			Description: '',
-			Type: '',
-			Location: '',
-			Time: ''
+			Description: undefined,
+			Type: undefined,
+			Location: undefined,
+			Time: undefined
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -77,10 +68,10 @@ class Description extends React.Component {
 		var changes = {}; //object to hold changes
 		changes[field] = value; //change this field
 		this.setState(changes); //update state
-		console.log("hi");
 	}
 	handleSubmit(event) {
-		alert('A name was submitted: ' + this.state.value);
+		EVENTS.push(this.state);
+		console.log(EVENTS);
 		event.preventDefault();
 	}
 
@@ -88,17 +79,23 @@ class Description extends React.Component {
 		return (
 			<div>
 				<Form horizontal>
-					<InputBox type="Description"/>
-					<Dropdown/>
-					<InputBox type="Location"/>
-					<InputBox type="Time"/>
+					<InputBox type="Description" changeCallback={this.handleChange} />
+					<InputBox type="Type" changeCallback={this.handleChange} />
+					<InputBox type="Location" changeCallback={this.handleChange} />
+					<InputBox type="Time" changeCallback={this.handleChange} />
+					<InputBox type="Details" changeCallback={this.handleChange} />
 
 					<FormGroup>
+<<<<<<< HEAD
 						<Col>
 							<Button type="submit">
 								Submit
 					</Button>
 						</Col>
+=======
+						<Col smOffset={2} sm={10}>
+							<button className="btn btn-primary" onClick={(e) => this.handleSubmit(e)}>Submit</button>						</Col>
+>>>>>>> 6ff746836f18de3b1b6233f88bd777eb8b22a509
 					</FormGroup>
 				</Form>
 			</div>
@@ -117,7 +114,7 @@ class InputBox extends React.Component {
 						{this.props.type}
 					</Col>
 					<Col sm={10}>
-						<FormControl type={this.props.type} placeholder={this.props.type} />
+						<FormControl type={this.props.type} placeholder={this.props.type} name={this.props.type} onChange={this.props.changeCallback} />
 					</Col>
 				</FormGroup>
 			</div>
@@ -135,7 +132,7 @@ class Dropdown extends React.Component {
 					Type of Event
 					</Col>
 				<Col sm={10}>
-					<FormControl componentClass="select" placeholder="select" width="small">
+					<FormControl componentClass="select" placeholder="select" width="small" name={this.props.type} onChange={this.props.changeCallback}>
 						<option value="select">select</option>
 						<option value="other">Shooting</option>
 						<option value="other">Robbery</option>
